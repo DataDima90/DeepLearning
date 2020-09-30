@@ -40,13 +40,13 @@ If docker is running then you can start the training using:
 python run.py -c configs/conv_from_config.json
 ```
 
-To start Tensorboard visualization using:
+Start Tensorboard visualization using:
 
 ```bash
 tensorboard --logdir=experiments/<date>/<conv_from_config.json.exp.name>/logs
 ```
 
-To visualize the learning curve of the training and validation data set using:
+Visualize the learning curve of the training and validation data set using:
 
 ```bash
 python run_evaluate.py -c configs/conv_from_config.json
