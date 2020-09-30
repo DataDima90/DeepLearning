@@ -1,6 +1,6 @@
-# DeepLearning
+# DeepLearning (Image Classification)
 
-A deep learning project for image classification to simplify building and training deep learning models using Keras
+A showcase deep learning project for image classification with MNIST Dataset to simplify building and training deep learning models using Keras.
 
 ## Setup
 
@@ -45,7 +45,7 @@ Start Tensorboard visualization using:
 tensorboard --logdir=experiments/<date>/<conv_from_config.json.exp.name>/logs
 ```
 
-Visualize the learning curve of the training and validation data set using:
+Visualize the learning curve of the training and validation process using:
 
 ```bash
 python run_evaluate.py -c configs/conv_from_config.json
