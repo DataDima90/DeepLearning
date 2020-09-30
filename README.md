@@ -14,21 +14,20 @@ This repository contains Dockerfile.
 
 Obtaining the Docker image
 
-#### Build the Docker image locally
-You can build the images locally. Also, since the GPU version is not available in Docker Hub at the moment, you'll have to follow this if you want to GPU version. Note that this will take an hour or two depending on your machine since it compiles a few libraries from scratch.
+#### Build the Docker image and run it as a Container
 
+1. Clone the repository and go to the path DeepLearning:
 ```bash
 git clone https://github.com/datadima90/deeplearning.git
-cd deeplearning
+cd DeepLearning
 ```
 
+2. Build the docker using:
 ```bash
 docker build -t datadima90/deeplearning:dl -f Dockerfile .
 ```
 
-## Running the Docker image as a Container
-Once we've built the image, we have all the frameworks we need installed in it. 
-
+3. Once we've built the image, we have all the frameworks we need installed in it. Run the the docker image using:
 ```bash
 docker run -it Dockerfile bash
 ```
