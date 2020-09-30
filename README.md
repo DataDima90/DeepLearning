@@ -4,17 +4,17 @@ A showcase deep learning project for image classification with MNIST Dataset to 
 
 ## Setup
 
+### Requirements
+
 This repository contains Dockerfile.
 
-### Requirements
 1. Install Docker following the installation guide for your platform: 
 [https://docs.docker.com/engine/installation/](https://docs.docker.com/engine/installation/)
 
 ## Quick Start Guide
+You have two options how you can run this project: with Docker or on local.
 
-Obtaining the Docker image
-
-#### Build the Docker image and run it as a Container
+#### Docker: Build the Docker image and run it as a Container
 
 1. Clone the repository and go to the path DeepLearning:
 ```bash
@@ -32,8 +32,27 @@ docker build -t datadima90/deeplearning:dl -f Dockerfile .
 docker run -it Dockerfile bash
 ```
 
+#### Local: Creating an environment from an environment.yml file on local
+
+Use the terminal or an Anconda Prompt for the following steps:
+
+1. Create the enviroment from the environment.yml file:
+```bash
+conda env create -f environment.yml
+```
+
+2. Activate the new enviroment:
+```bash
+conda activate deepl_env
+```
+
+3. Verify that the new enviroment was installed correctly:
+```bash
+conda env list
+```
+
 ### Running the Project
-If docker is running then you can start the training using:
+If docker is running or you created the enviroment from the .yml file you can start the training in terminal using:
 
 ```bash
 python run.py -c configs/conv_from_config.json
