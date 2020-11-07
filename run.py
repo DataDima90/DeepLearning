@@ -1,10 +1,16 @@
 # Import internal packages
-from dataloader.data_loader import DataLoader
+from dataloader.mnist_data_loader import MnistDataLoader
+from dataloader.iris_data_loader import IrisDataLoader
 from models.cnn_model import ConvModel
-from training.conv_mnist_training import ConvMnistModelTraining
+from models.ann_model import ANNModel
+from training.training import ModelTraining
 from utils.config import process_config
 from utils.dirs import create_dirs
 from utils.utils import get_args
+
+
+from keras.wrappers.scikit_learn import KerasClassifier
+from sklearn.model_selection import cross_val_score, GridSearchCV
 
 
 def main():
@@ -25,18 +31,24 @@ def main():
     create_dirs(dirs=[config.callbacks.tensorboard_log_dir, config.callbacks.checkpoint_dir])
 
     print("Create the data generator.")
-    data_loader = DataLoader(config=config)
+    # data_loader = MnistDataLoader(config=config)
+    data_loader = IrisDataLoader(config=config)
+    train_data = data_loader.get_train_data()
 
     print("Create the model")
-    model = ConvModel(config=config)
+    # model = ConvModel(config=config)
+    model = ANNModel(config=config)
 
     print("Create Training environment")
-    training = ConvMnistModelTraining(model=model.model,
-                                      data=data_loader.get_train_data(),
-                                      config=config)
+    training = ModelTraining(model=model.model,
+                             data=train_data,
+                             config=config)
 
     print("Start training the model")
-    training.train()
+    # training.train()
+
+    print("Start measuring performance with cross validation")
+    training.hyp_opt()
 
 
 if __name__ == '__main__':

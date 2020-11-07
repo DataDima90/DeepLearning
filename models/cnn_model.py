@@ -16,7 +16,7 @@ class ConvModel(BaseModel):
 
     def build_model(self):
         """
-        CNN model with MaxPool2D and Relu as a filter, Dropout for regularization and SGD as a optimizer
+        CNN model with MaxPool2D and Relu as a filter, Dropout for regularization and SGD as an optimizer
         """
         self.model = Sequential()
         self.model.add(Conv2D(32, kernel_size=(3, 3),
@@ -37,4 +37,3 @@ class ConvModel(BaseModel):
             metrics=['accuracy'])
 
         return self.model
-
