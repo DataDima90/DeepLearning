@@ -18,7 +18,7 @@ You have two options how you can run this project: with Docker or on local.
 
 1. Clone the repository and go to the path DeepLearning:
 ```bash
-git clone https://github.com/datadima90/deeplearning.git
+git clone https://github.com/datadima90/DeepLearning.git
 cd DeepLearning
 ```
 
